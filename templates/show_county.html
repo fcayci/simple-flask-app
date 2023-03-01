@@ -1,0 +1,11 @@
+<!doctype html>
+
+<p><a href="/">/</a></p>
+
+<ul id="cities">
+    {% for city in cities %}
+    <li><a href={{ city.href }}>{{ city.name }}</a></li>
+    {% else %}
+    <li>no cities are found for this county</li>
+    {% endfor %}
+</ul>

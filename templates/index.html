@@ -1,0 +1,23 @@
+<!doctype html>
+<title>Welcome to Ireland</title>
+
+<h2>Welcome to Ireland</h2>
+
+<p>Click on any of the counties to see their towns!</p>
+
+<ul id="counties">
+    {% for county in counties %}
+    <li><a href={{ county.href }}>{{ county.name }}</a></li>
+    {% endfor %}
+</ul>
+
+<form action="/ireland" method="post">
+    <p>Choose from drop down list to directly go to the county</p>
+    <select name="selected_county">
+        <option value=None SELECTED>Choose a county</option>
+        {% for county in counties %}
+        <option value={{ county.href }}>{{ county.name }}</option>
+        {% endfor %}
+    </select>
+<button name="submit" value="submit">Submit</button>
+</form>
